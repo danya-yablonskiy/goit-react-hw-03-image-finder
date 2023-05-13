@@ -1,12 +1,12 @@
-export const ImageGalleryItem = ({ images }) => {
+export const ImageGalleryItem = ({ image, showModal }) => {
   return (
-    <>
-      {images &&
-        images.map(image => (
-          <li className="gallery-item" key={image.id}>
-            <img src={image.webformatURL} alt="" />
-          </li>
-        ))}
-    </>
+    <li className="ImageGalleryItem">
+      <img
+        src={image.webformatURL}
+        alt=""
+        className="ImageGalleryItem-image"
+        onClick={() => showModal(image.largeImageURL)}
+      />
+    </li>
   );
 };
